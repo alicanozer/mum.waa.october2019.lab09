@@ -22,7 +22,7 @@ public class ExceptionController {
 	@Autowired
 	MessageSourceAccessor messageAccessor;
 	
-     @ExceptionHandler(MethodArgumentNotValidException.class)
+	@ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
        public DomainErrors handleException(MethodArgumentNotValidException exception) {

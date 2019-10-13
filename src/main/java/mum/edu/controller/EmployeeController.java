@@ -1,19 +1,22 @@
 package mum.edu.controller;
 
-import javax.validation.Valid;
-
-import org.springframework.stereotype.Controller;
+import mum.edu.domain.Employee;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import mum.edu.domain.Employee;
- 
+import javax.validation.Valid;
 
+@RestController
 public class EmployeeController {
-	
- 
-	
-	
+
+    @RequestMapping(value = "/addEmp",method = RequestMethod.POST)
+    public Employee addEmp(@Valid @RequestBody Employee employee){
+        return employee;
+    }
+
+
+
+
 }

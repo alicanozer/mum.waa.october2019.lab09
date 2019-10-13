@@ -1,20 +1,20 @@
 package mum.edu.domain;
 
-import java.io.Serializable;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 public class Employee  {
-	
- 
 
- 	private String firstName;
-	
- 	private String lastName;
-	
- 	private String email;
+	@NotEmpty
+	private String firstName;
+	@NotEmpty
+	@Size(min = 3,max = 10)
+	private String lastName;
+	@NotEmpty
+	@Email(message = "email")
+	private String email;
 
 	public String getFirstName() {
 		return firstName;
